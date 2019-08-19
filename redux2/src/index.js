@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
-import countReducer from './reducers/countReducer'
-// reducer는 action을 한다.
-const store= createStore(countReducer)
+import panelReducer from './reducers/panelReducer'
 
+const store = createStore(panelReducer)
 
 ReactDOM.render(
-<Provider store={store}>
-    <App></App>
-</Provider>
+    <Provider store={store}>
+        <App></App>
+    </Provider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
