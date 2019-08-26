@@ -4,17 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
-import panelReducer from './reducers/panelReducer'
-import {composeWithDevTools} from 'redux-devtools-extension'
-const store = createStore(panelReducer,composeWithDevTools())
+import store from './configureStore'
+
+//onsole.log(store)
 
 ReactDOM.render(
     <Provider store={store}>
-        <App></App>
-    </Provider>
-, document.getElementById('root'));
+        <App />
+    </Provider>, 
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
